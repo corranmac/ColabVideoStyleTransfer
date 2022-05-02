@@ -9,7 +9,8 @@ import torch
 from litmodels import LitModel
 from data import PatchDataModule, prepare_data
 
-data_path = Path('/content/project/')
+epochs=sys.argv[1]
+data_path = Path(sys.argv[2])
 # data is excpected to be in folders:
 # data_path /
 #           input
