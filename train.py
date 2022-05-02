@@ -42,7 +42,7 @@ if __name__ == "__main__":
     trainer = pl.Trainer(
         gpus=-1, 
         precision=16,
-        max_epochs=100,
+        max_epochs=epochs,
         log_every_n_steps=8,
         limit_train_batches=1.0,
         limit_val_batches=1.0,
