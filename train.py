@@ -11,6 +11,9 @@ from data import PatchDataModule, prepare_data
 
 epochs=int(sys.argv[1])
 data_path = Path(sys.argv[2])
+batch_size= Path(sys.argv[3])
+patch_size= Path(sys.argv[4])
+resume= Path(sys.argv[5])
 # data is excpected to be in folders:
 # data_path /
 #           input
@@ -37,7 +40,8 @@ if __name__ == "__main__":
     model = LitModel( use_adversarial=True)
 
     # uncomment next line to start from latest checkpoint
-    # model = LitModel.load_from_checkpoint(model_save_path/"latest.ckpt")
+    if resume=="resume":
+        model = LitModel.load_from_checkpoint(model_save_path/"latest.ckpt")
     
     trainer = pl.Trainer(
         gpus=-1, 
