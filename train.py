@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
     logger = TensorBoardLogger(Path(), 'lightning_logs')
 
-    profiler = pl.profiler.SimpleProfiler()
+    profiler = pl.profilers.SimpleProfiler()
 
     callbacks = []
 
