@@ -13,7 +13,8 @@ epochs=int(sys.argv[1])
 data_path = Path(sys.argv[2])
 batch_size= Path(sys.argv[3])
 patch_size= Path(sys.argv[4])
-resume= Path(sys.argv[5])
+patch_num= Path(sys.argv[5])
+resume= Path(sys.argv[6])
 # data is excpected to be in folders:
 # data_path /
 #           input
@@ -33,8 +34,8 @@ if __name__ == "__main__":
     train_image_dd = prepare_data(data_path)
 
     dm = PatchDataModule(train_image_dd,
-                         patch_size=2**6,
-                         batch_size=2**3,
+                         patch_size=patch_size,
+                         batch_size=batch_size,
                          patch_num=2**6)
 
     model = LitModel( use_adversarial=True)
