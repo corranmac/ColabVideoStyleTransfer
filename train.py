@@ -11,10 +11,10 @@ from data import PatchDataModule, prepare_data
 
 epochs=int(sys.argv[1])
 data_path = Path(sys.argv[2])
-batch_size= Path(sys.argv[3])
-patch_size= Path(sys.argv[4])
-patch_num= Path(sys.argv[5])
-resume= Path(sys.argv[6])
+batch_size= int(sys.argv[3])
+patch_size= int(sys.argv[4])
+patch_num= int(sys.argv[5])
+resume= bool(sys.argv[6])
 # data is excpected to be in folders:
 # data_path /
 #           input
